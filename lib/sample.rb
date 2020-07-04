@@ -84,4 +84,82 @@ a = []
 a << 1 while a.size < 5
 puts a
 
-a = [10, 20, 30, 40, 50]
+puts "--------------------------------"
+
+numbers = [1, 2, 3, 4]
+sum = 0
+
+numbers.each do |n|
+  sum_value = n.even?? n * 10 : n
+  sum += sum_value
+end
+puts sum
+
+puts "--------------------------------"
+
+numbers = [1, 2, 3, 4, 5]
+loop do
+  n = numbers.sample #sampleメソッドでランダムに要素を取得
+  puts n
+  break if n == 5
+end
+
+puts "--------------------------------"
+
+numbers = [1, 2, 3, 4, 5].shuffle
+i = 0
+h = while i < numbers.length
+  n = numbers[i]
+  puts n
+  break 123
+  i += 1
+end
+puts h
+
+puts "--------------------------------"
+# break
+fruits = %W(apple melon orange)
+numbers = [1, 2, 3]
+fruits.each do |fruit|
+  numbers.shuffle.each do |n|
+    puts "#{fruit}, #{n}"
+    break if n == 3
+  end
+end
+
+puts "--------------------------------"
+# catch throw
+fruits = %W(apple melon orange)
+numbers = [1, 2, 3]
+h = catch :done do
+  fruits.shuffle.each do |fruit|
+    numbers.shuffle.each do |n|
+      puts "#{n}, #{fruit}"
+      if fruit == "orange" && n == 3
+        throw :done, 123
+      end
+    end
+  end
+end
+puts h
+
+puts "--------------------------------"
+# next
+numbers = [1, 2, 3, 4, 5]
+numbers.each do |n|
+  next if n.even?
+  puts n
+end
+
+puts "--------------------------------"
+
+foods = %W(ピーマン トマト セロリ)
+count = 0
+foods.each do |food|
+  print "#{food}は好きですか？=>"
+  answer = %W(はい いいえ).sample
+  puts answer
+  count += 1
+  redo if answer != "はい" && count < 2
+  count = 0
+end
