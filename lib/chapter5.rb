@@ -20,13 +20,17 @@ puts currencies
 
 puts "--------------------------------"
 
-def bye_burger(menu, drink, potate)
+def bye_burger(menu, drink: true, potate: true, **others)
   if drink
-
+    puts others
   end
   if potate
 
   end
 end
 
-bye_burger("cheese", true, true)
+bye_burger("cheese", drink: true, potate: true, salad: true)
+
+puts "--------------------------------"
+currencies.to_a
+puts currencies
