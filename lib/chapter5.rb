@@ -34,3 +34,18 @@ bye_burger("cheese", drink: true, potate: true, salad: true)
 puts "--------------------------------"
 currencies.to_a
 puts currencies
+
+puts "--------------------------------"
+string = "apple"
+symbol = :apple
+
+puts string.to_sym == symbol
+
+puts "--------------------------------"
+limit = nil
+limit ||= 10
+puts limit
+
+limit = 20
+limit ||= 10
+puts limit
